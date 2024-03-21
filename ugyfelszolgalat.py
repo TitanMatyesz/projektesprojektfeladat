@@ -85,19 +85,3 @@ if varakozas < 0:
     varakozas = 0
 
 print(f"Az utolsó telefonáló adatai a(z) {utolsohivas+1}. sorban vannak, {varakozas} másodpercig várt.")
-
-bekapcsolt = []
-elotte = 0
-muszakkezdete = mpbe(8,0,0)
-i = 0
-for hivas in hivasok:
-    if muszakkezdete < hivas[7] and hivasok[elotte][7] < hivas[7] and hivas[6] <= muszakvege:
-        bekapcsolt.append(i)
-        elotte = i
-    i += 1
-
-f = open("sikeres.txt", "w", encoding="utf-8")
-if hivasok[bekapcsolt[0][6] < muszakkezdete]:
-    kezdet = "08 00 00"
-else:
-    kezdet = str(hivasok[bekapcsolt[0][0]])+" "+str(bekapcsolt[0][1])+" "+str(bekapcsolt[0][2])
